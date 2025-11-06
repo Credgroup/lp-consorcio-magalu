@@ -1,14 +1,27 @@
 # Usar imagem base leve do Nginx
 FROM nginx:alpine
 
-# Apagar arquivos padrão do nginx
+# Define o diretório de trabalho (opcional)
+WORKDIR /app
+
+# Copia todos os arquivos locais para dentro do container
+COPY . .
+
+# Apaga os arquivos HTML padrão do Nginx
 RUN rm -rf /usr/share/nginx/html/*
 
-# Copiar todo o conteúdo da sua pasta para a pasta padrão do nginx
-COPY . /usr/share/nginx/html/
+# Copia o index.html para o diretório servido pelo Nginx
+COPY ./index.html /usr/share/nginx/html/
 
-# Expor a porta 80
+# Copia e dá permissão ao entrypoint
+COPY ./entrypoint.sh /entrypoint.sh
+RUN chmod +x /entrypoint.sh
+
+# Define o entrypoint customizado
+ENTRYPOINT ["/entrypoint.sh"]
+
+# Expõe a porta padrão do Nginx
 EXPOSE 80
 
-# Iniciar o nginx quando o container subir
+# Comando final para rodar o Nginx
 CMD ["nginx", "-g", "daemon off;"]
