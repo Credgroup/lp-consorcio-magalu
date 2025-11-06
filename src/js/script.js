@@ -334,7 +334,7 @@ function validaCPF(cpf){
         //const r = await fetch('https://devwebhook.keepins.app/webhook/formulario/wiz', {method:'POST',  headers: {"Content-Type": "application/json",    "Authorization": `${token}`}, body: JSON.stringify(payload)});
         // const r = await fetch('https://hmln8n.keepins.app/webhook/formulario/magalu', {method:'POST',  headers: {"Content-Type": "application/json",    "Authorization": `${token}`}, body: JSON.stringify(payload)});
         // const r = await fetch('https://hmlwebhook.keepins.app/webhook/formulario/magalu', {method:'POST',  headers: {"Content-Type": "application/json",    "token": `${token}`, "Authorization": `${token2}` }, body: JSON.stringify(payload)});
-         const r = await fetch('https://hmln8n.keepins.app/webhook/formulario/magalu', {method:'POST',  headers: {"Content-Type": "application/json", "Authorization": `Basic ${credentials}`, "token": `${token}`},body: JSON.stringify(payload)});
+         const r = await fetch('(URL_WEBHOOK_ENV)/(URL_SENDDATA_WEBHOOK_ENV)', {method:'POST',  headers: {"Content-Type": "application/json", "Authorization": `Basic ${credentials}`, "token": `${token}`},body: JSON.stringify(payload)});
 
 
         if(!r.ok) throw new Error('Falha ao enviar');
