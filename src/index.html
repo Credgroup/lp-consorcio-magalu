@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Magalu Consórcio × MAPFRE — Seguro do Saldo Devedor</title>
+  <meta name="description" content="Proteja o saldo devedor do seu Consórcio Magalu com o seguro MAPFRE (Morte e IPTA). Jornada 100% digital.">
+  <meta name="theme-color" content="#0b1220">
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+  <header>
+    <div class="wrap">
+      <img src="https://wkfkeepinsmarsh.blob.core.windows.net/arquivamento/html/img/documentos/1027/604/6049consorcio-removebg-preview.png?sp=r&st=2025-05-21T01:16:44Z&se=2026-05-21T09:16:44Z&spr=https&sv=2024-11-04&sr=c&sig=0o75S62Z761Xs2J5GX5XaVRwz%2BlqaGD3trx2uaKZzYw%3D
+ " height="40" alt="Magalu Consórcio">
+      <img src="https://wkfkeepinsmarsh.blob.core.windows.net/arquivamento/html/img/documentos/1027/604/6043Mapfre_logo.svg.png?sp=r&st=2025-05-21T01:16:44Z&se=2026-05-21T09:16:44Z&spr=https&sv=2024-11-04&sr=c&sig=0o75S62Z761Xs2J5GX5XaVRwz%2BlqaGD3trx2uaKZzYw%3D" height="40" alt="MAPFRE">
+    </div>
+  </header>
+
+  <main>
+   <section class="hero" aria-label="Oferta">
+  <div class="bd grid-hero">
+    
+    <!-- Bloco de texto -->
+    <div class="hero-text">
+      <div class="hint" style="opacity:.9;font-weight:800;text-transform:uppercase;letter-spacing:.3px">Exclusivo para clientes Magalu Consórcio</div>
+      <h1>Proteção imediata do seu saldo devedor</h1>
+      <div class="chips" id="chips">
+        <span class="chip alt2" id="chipGrupoCota">
+          Grupo <strong id="StrongGrupoVar">{{grupo}}</strong> • 
+          <strong id="StrongCotaVar">Cota {{cota}}</strong>
+        </span>
+        <span class="chip alt2">Coberturas: Morte e IPTA</span>
+        <span class="chip alt">100% digital</span>
+      </div>
+      <p class="lead">Indenização aplicada ao <strong>saldo devedor</strong> do consórcio.</p>
+      <p class="from">No valor de R$<span id="preco"><strong id="StrongPremio_mensalVar">{{premiomensal}}</strong></span>/mês*</p>
+    </div>
+
+    <!-- Bloco da imagem -->
+    <div class="hero-img">
+      <img src="https://wkfkeepinsmarsh.blob.core.windows.net/arquivamento/html/img/documentos/1027/604/6049Protecaofamiliar1.png?sp=r&st=2025-05-21T01:16:44Z&se=2026-05-21T09:16:44Z&spr=https&sv=2024-11-04&sr=c&sig=0o75S62Z761Xs2J5GX5XaVRwz%2BlqaGD3trx2uaKZzYw%3D" alt="Proteção familiar">
+    </div>
+
+  </div>
+</section>
+
+    <section id="beneficios">
+      <div class="cards">
+        <article class="card3"><div class="bd"><h3>🛡️ Saldo protegido</h3><div class="hint2">Indenização aplicada ao saldo devedor.</div></div></article>
+        <article class="card3"><div class="bd"><h3>⚡ 100% digital</h3><div class="hint2">Contratação rápida, sem burocracia.</div></div></article>
+      </div>
+    </section>
+
+    <section class="grid">
+      <div>
+        <article class="panel" id="step-cpf">
+          <div class="hd">1) Comece informando os 3 primeiro digitos do seu CPF <div class="stepper"><span class="dot active"></span><span class="dot"></span><span class="dot"></span></div></div>
+          <div class="bd">
+            <div class="row">
+              <div>
+                <label for="cpf">CPF</label>
+                <input id="cpf" name="cpf" inputmode="numeric" autocomplete="off" placeholder="Digite os 3 primeiros números do CPF" aria-describedby="cpfHint cpfError">
+                <div id="cpfHint" class="hint">Usaremos para localizar seus dados no Magalu. Não armazenamos sem o seu consentimento.</div>
+                <div id="cpfError" class="error hide bold" role="alert" style="color: #ffffff">CPF INVÁlIDO. VERIFIQUE E TENTE NOVAMENTE.</div>
+              </div>
+              <div style="display:flex;align-items:flex-end;gap:12px">
+                <button id="btnCpf" class="cta secondary">Validar CPF</button>
+                <button id="btnLimpar" class="cta" type="button">Limpar</button>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <form class="panel hide" id="form-adesao" method="post" action="#">
+          <!-- <div class="hd">2) Dados do participante -->
+          <div class="hd">2) Confirme se seus dados estão corretos.
+            <div class="hint">Se algum valor estiver incorreto, é possível alterá-lo</div>
+          </div>
+          
+          <div class="bd">
+            <div class="row">
+              <div><label for="nome">Nome completo *</label><input id="nome" name="nome" required></div>
+              <div><label for="nascimento">Data de nascimento *</label><input id="nascimento" name="nascimento" type="date" required><div class="hint">Usado para validar a elegibilidade de idade.</div></div>
+            </div>
+            <div class="row">
+              <div><label for="rg">RG *</label><input id="rg" name="rg" required maxlength="9"></div>
+              <div><label for="telefone">Telefone *</label><input id="telefone" name="telefone" inputmode="tel" required placeholder="(11) 99999-9999" maxlength="11"></div>
+            </div>
+            <div class="row">
+            <div><label for="endereco">Endereço *</label><input id="endereco" name="endereco" required></div>
+            <div><label for="cep">CEP *</label><input id="cep" name="cep" required></div>
+            </div>
+            <div class="row">
+            <div><label for="bairro">bairro *</label><input id="bairro" name="bairro" required></div>
+            <div><label for="cidade">cidade *</label><input id="cidade" name="cidade" required></div>
+            <div><label for="pep">Você é PEP? *</label>
+                <select id="pep" name="pep" required>
+                  <option value="">Selecione…</option>
+                  <option value="false">Não</option>
+                  <option value="true">Sim</option>
+                </select>
+              </div>
+            <!-- <div><label for="prazo">Prazo do grupo (meses)</label><input id="prazo" name="prazo" type="number" min="1" step="1" placeholder="Ex.: 60"></div> -->
+            <div><label for="uf">uf *</label><input id="uf" name="uf" required></div>
+            </div>
+            <div class="row">
+              <div><label for="profissao">Profissão *</label><input id="profissao" name="profissao" required></div>
+              <!-- <div><label for="renda">Faixa de renda *</label>
+                <select id="renda" name="renda" required>
+                  <option value="">Selecione…</option>
+                  <option>Até 2 SM</option>
+                  <option>De 2 a 5 SM</option>
+                  <option>De 5 a 10 SM</option>
+                  <option>Acima de 10 SM</option>
+                </select>
+              </div> -->
+              <div><label for="renda">Faixa de renda *</label><input id="renda" name="renda" required></div>
+            </div>
+            <div class="row">
+              <div><label for="grupo">Grupo *</label><input id="grupo" name="grupo" required></div>
+              <div><label for="cota">Cota *</label><input id="cota" name="cota" required></div>
+            </div>
+            <div class="row">
+              <div><label for="venda">Voce confirma o interece de compra?</label>
+              <select id="venda" name="venda" required>
+                  <option value="">Selecione…</option>
+                  <option value=false>Não</option>
+                  <option value=true>Sim</option>
+                </select></div>
+            </div>
+            <!-- <div class="row">
+              <div><label for="pep">Você é PEP? *</label>
+                <select id="pep" name="pep" required>
+                  <option value="">Selecione…</option>
+                  <option value="false">Não</option>
+                  <option value="true">Sim</option>
+                </select>
+              </div>
+            </div> -->
+            <div style="margin:12px 0 4px"><label><input type="checkbox" id="consent" required> Confirmo que li e aceito as Condições Gerais e autorizo o uso dos meus dados nos termos da LGPD.</label></div>
+            <!-- <div class="hint">Condições Gerais do seguro (PDF): <a href="#" target="_blank" rel="noopener">baixar</a></div> -->
+            <div id="eligError" class="error hide" role="alert"></div>
+            <div style="display:flex;gap:12px;margin-top:14px;flex-wrap:wrap">
+              <button class="cta secondary" id="btnOptIn" type="submit">Sim, quero contratar</button>
+              <!-- <button class="cta" id="btnOptOut" type="button">Não desejo contratar</button> -->
+            </div>
+          </div>
+          <input type="hidden" name="cpf_hidden" id="cpf_hidden">
+          <!-- <input type="hidden" name="optin" id="optin" value="true">
+          <input type="hidden" name="utm_source" id="utm_source">
+          <input type="hidden" name="utm_medium" id="utm_medium">
+          <input type="hidden" name="utm_campaign" id="utm_campaign"> -->
+        </form>
+
+        <article id="step-ok" class="panel hide" aria-live="polite">
+          <div class="hd">3) Tudo certo ✅</div>
+          <div class="bd" id="okMsg">Obrigado! Enviamos a confirmação e próximas etapas para seu e‑mail.</div>
+        </article>
+      </div>
+
+      <aside>
+        <article class="panel2"><div class="hd">Dúvidas frequentes</div>
+          <div class="bd">
+            <details open>
+              <summary>O que é a cobertura sobre o saldo devedor?</summary>
+              <div class="hint2">Em caso de sinistro coberto, a indenização é aplicada sobre o saldo devedor do consórcio, conforme condições da apólice.</div>
+            </details>
+            <details>
+              <summary>Posso contratar online?</summary>
+              <div class="hint2">Sim. A jornada é 100% digital e sujeita à análise e às Condições Gerais.</div>
+            </details>
+            <details>
+              <summary>Quais idades são elegíveis?</summary>
+              <div class="hint2">De 14 a 69 anos, e a soma (idade + prazo do grupo) não pode exceder 78 anos.</div>
+            </details>
+            <div style="margin-top:14px" class="hint2">Dúvidas? <a id="linkWhats" style="color:#0087ff">Fale no WhatsApp</a></div>
+          </div>
+        </article>
+        <article class="panel2" style="margin-top:18px"><div class="hd">Importante</div>
+          <div class="bd">
+            <div class="hint2" style="color:#000000">                    Idade elegível: de 14 a 69 anos.
+                    *Valor estimado, sujeito à análise e às Condições Gerais da MAPFRE.</div>
+          </div>
+        </article>
+      </aside>
+    </section>
+
+    <footer>© <span id="ano"></span> Magalu Consórcio — Seguro MAPFRE. <span>V(IMAGE_VERSION) - (ENVIRONMENT_VARIABLE)</span></footer>
+  </main>
+
+  <script src="./js/script.js"></script>
+</body>
+</html>

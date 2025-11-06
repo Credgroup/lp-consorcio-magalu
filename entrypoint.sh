@@ -1,33 +1,37 @@
 #!/bin/sh
 
-echo "Iniciando a substituição das variáveis de ambiente no index.html..."
+echo "🚀 Iniciando a substituição das variáveis de ambiente nos arquivos HTML e JS..."
 
-CONFIG_FILE="/usr/share/nginx/html/index.html"
+TARGET_DIR="/usr/share/nginx/html"
 
-if [ ! -f "$CONFIG_FILE" ]; then
-    echo "Erro: Arquivo index.html não encontrado no caminho: $CONFIG_FILE" >&2
+if [ ! -d "$TARGET_DIR" ]; then
+    echo "❌ Erro: Diretório $TARGET_DIR não encontrado." >&2
     exit 1
-else
-    echo "Arquivo index.html encontrado. Continuando..."
 fi
 
-declare -A variables="
-    ENVIRONMENT_VARIABLE (ENVIRONMENT_VARIABLE)
-    URL_WEBHOOK_ENV (URL_WEBHOOK_ENV)
-    URL_SENDDATA_WEBHOOK_ENV (URL_SENDDATA_WEBHOOK_ENV)
-    IMAGE_VERSION (IMAGE_VERSION)
-"
+# Lista de variáveis de ambiente a substituir
+VARS="ENVIRONMENT_VARIABLE URL_WEBHOOK_ENV URL_SENDDATA_WEBHOOK_ENV IMAGE_VERSION"
 
-for var in ENVIRONMENT_VARIABLE URL_WEBHOOK_ENV URL_SENDDATA_WEBHOOK_ENV IMAGE_VERSION; do
-    placeholder="(${var})"
-    value=$(eval echo \$$var)
-    if [ -z "$value" ]; then
-        echo "A variável $var não está definida. Ignorando..."
-    else
-        echo "Substituindo $placeholder por $value..."
-        sed -i "s|$placeholder|$value|g" "$CONFIG_FILE"
-    fi
-done
+# Procura todos os arquivos HTML e JS na pasta servida pelo Nginx
+FILES=$(find "$TARGET_DIR" -type f \( -name "*.html" -o -name "*.js" \))
+
+if [ -z "$FILES" ]; then
+    echo "⚠️ Nenhum arquivo .html ou .js encontrado em $TARGET_DIR"
+else
+    for file in $FILES; do
+        echo "🧩 Processando arquivo: $file"
+        for var in $VARS; do
+            placeholder="(${var})"
+            value=$(eval echo \$$var)
+            if [ -z "$value" ]; then
+                echo "   ⚠️  Variável $var não está definida. Ignorando..."
+            else
+                echo "   🔄 Substituindo $placeholder por $value"
+                sed -i "s|$placeholder|$value|g" "$file"
+            fi
+        done
+    done
+fi
 
 if [ -n "$IMAGE_VERSION" ]; then
     echo "✅ Build Version: $IMAGE_VERSION"
@@ -35,5 +39,5 @@ else
     echo "⚠️  Build Version não definida."
 fi
 
-echo "✅ Substituições concluídas com sucesso."
+echo "✅ Substituições concluídas com sucesso. Iniciando Nginx..."
 exec "$@"
