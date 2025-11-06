@@ -6,9 +6,12 @@
   <title>Magalu Consórcio × MAPFRE — Seguro do Saldo Devedor</title>
   <meta name="description" content="Proteja o saldo devedor do seu Consórcio Magalu com o seguro MAPFRE (Morte e IPTA). Jornada 100% digital.">
   <meta name="theme-color" content="#0b1220">
-  <link rel="stylesheet" href="./css/style.css">
+  
+    <link rel="stylesheet" href="./css/style.css">
+
+
 </head>
-<body>
+<body style="display: none;" id="corpo">
   <header>
     <div class="wrap">
       <img src="https://wkfkeepinsmarsh.blob.core.windows.net/arquivamento/html/img/documentos/1027/604/6049consorcio-removebg-preview.png?sp=r&st=2025-05-21T01:16:44Z&se=2026-05-21T09:16:44Z&spr=https&sv=2024-11-04&sr=c&sig=0o75S62Z761Xs2J5GX5XaVRwz%2BlqaGD3trx2uaKZzYw%3D
@@ -17,8 +20,11 @@
     </div>
   </header>
 
+  <div id="sumir">
   <main>
    <section class="hero" aria-label="Oferta">
+
+
   <div class="bd grid-hero">
     
     <!-- Bloco de texto -->
@@ -28,7 +34,7 @@
       <div class="chips" id="chips">
         <span class="chip alt2" id="chipGrupoCota">
           Grupo <strong id="StrongGrupoVar">{{grupo}}</strong> • 
-          <strong id="StrongCotaVar">Cota {{cota}}</strong>
+          Cota <strong id="StrongCotaVar">{{cota}}</strong>
         </span>
         <span class="chip alt2">Coberturas: Morte e IPTA</span>
         <span class="chip alt">100% digital</span>
@@ -121,14 +127,14 @@
               <div><label for="grupo">Grupo *</label><input id="grupo" name="grupo" required></div>
               <div><label for="cota">Cota *</label><input id="cota" name="cota" required></div>
             </div>
-            <div class="row">
+            <!-- <div class="row">
               <div><label for="venda">Voce confirma o interece de compra?</label>
               <select id="venda" name="venda" required>
                   <option value="">Selecione…</option>
                   <option value=false>Não</option>
                   <option value=true>Sim</option>
                 </select></div>
-            </div>
+            </div> -->
             <!-- <div class="row">
               <div><label for="pep">Você é PEP? *</label>
                 <select id="pep" name="pep" required>
@@ -138,7 +144,7 @@
                 </select>
               </div>
             </div> -->
-            <div style="margin:12px 0 4px"><label><input type="checkbox" id="consent" required> Confirmo que li e aceito as Condições Gerais e autorizo o uso dos meus dados nos termos da LGPD.</label></div>
+            <div style="margin:12px 0 4px"><label class="checkbox-orange"> Confirmo que li e aceito as Condições Gerais e autorizo o uso dos meus dados nos termos da LGPD: <input type="checkbox" id="consent" required></label></div>
             <!-- <div class="hint">Condições Gerais do seguro (PDF): <a href="#" target="_blank" rel="noopener">baixar</a></div> -->
             <div id="eligError" class="error hide" role="alert"></div>
             <div style="display:flex;gap:12px;margin-top:14px;flex-wrap:wrap">
@@ -186,8 +192,30 @@
       </aside>
     </section>
 
-    <footer>© <span id="ano"></span> Magalu Consórcio — Seguro MAPFRE. <span>V(IMAGE_VERSION) - (ENVIRONMENT_VARIABLE)</span></footer>
+    <footer>© <span id="ano"></span> Magalu Consórcio — Seguro MAPFRE.</footer>
   </main>
+  </div>
+
+  <div class="mainDiv" id="sumirDados">
+       <section class="hero" aria-label="Oferta">
+
+
+  <div class="bd grid-hero">
+    
+    <!-- Bloco de texto -->
+    <div class="hero-text">
+
+      <h1>Algo deu errado :(</h1>
+      <div class="chips" id="chips">
+      </div>
+       <p class="lead">Abra o link do email para tentar novamente.</p>
+      <p class="lead">Se o problema persistir, entre em contato com nossa equipe de suporte.</p>
+    </div>
+
+  </div>
+</section>
+  </div>
+   
 
   <script src="./js/script.js"></script>
 </body>
