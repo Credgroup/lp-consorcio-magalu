@@ -16,9 +16,7 @@
       const linkvarWhats = document.getElementById("linkWhats")
       const faixarenda = validarParametro(params.get("faixarenda"))
       pegarValorRenda(faixarenda)
-
-      linkvarWhats.href = whatsVar
-      linkvarWhats.target = "_blank" 
+    
       
       //Transformando valores em numeros
       const taxaNumerica = parseFloat(taxa.replace(',', '.'));
