@@ -214,19 +214,6 @@ function validaCPF(cpf){
       $('#cpfError').classList.add('hide');
       $('#cpf_hidden').value = cpf.replace(/\D/g,'');
 
-      // Lookup opcional
-      // try {
-      //   // const r = await fetch(`/api/lookup?cpf=${encodeURIComponent($('#cpf_hidden').value)}`);
-      //   if(r.ok){
-      //     const j = await r.json();
-      //     if(j.grupo) $('#grupo').value = j.grupo;
-      //     if(j.cota) $('#cota').value = j.cota;
-      //     if(j.prazo_meses) $('#prazo').value = j.prazo_meses;
-      //     if(j.premio_mensal){ $('#preco').textContent = 'R$ ' + j.premio_mensal; }
-      //     // Atualiza chip Grupo/Cota
-      //     $('#chipGrupoCota').textContent = `Grupo ${j.grupo||'—'} • Cota ${j.cota||'—'}`;
-      //   }
-      // } catch(e) { /* segue sem prefill */ }
 
       hide($('#step-cpf'));
       show($('#form-adesao'));
@@ -247,27 +234,6 @@ function validaCPF(cpf){
       if(!$('#consent').checked){ const box=$('#eligError'); box.textContent = 'Para continuar, aceite as Condições Gerais e o uso de dados (LGPD).'; box.classList.remove('hide'); return; }
       $('#eligError').classList.add('hide');
 
-      // console.log(idsegurado)
-      // const payload = {
-      //   //cpf: $('#cpf_hidden').value,
-      //   idsegurado: idsegurado,
-      //   nome: $('#nome').value,
-      //   nascimento: $('#nascimento').value,
-      //   rg: $('#rg').value,
-      //   telefone: $('#telefone').value,
-      //   endereco: $('#endereco').value,
-      //   profissao: $('#profissao').value,
-      //   renda: $('#renda').value,
-      //   grupo: $('#grupo').value,
-      //   cota: $('#cota').value,
-      //   prazo_meses: $('#prazo').value,
-      //   pep: $('#pep').value,
-      //   //optin: true,
-      //   //utm_source: $('#utm_source').value,
-      //   //utm_medium: $('#utm_medium').value,
-      //   //utm_campaign: $('#utm_campaign').value
-      // };
-            
 
             
             let dataDeEnvio = getFormattedDate()
@@ -284,7 +250,6 @@ function validaCPF(cpf){
 
 
         idsegurado: idsegurado,
-        // idsegurado: 1529195,
         dados: [{
           magalu_resposta_nome: $('#nome').value,
           magalu_resposta_nascimento: $('#nascimento').value,
@@ -315,7 +280,6 @@ function validaCPF(cpf){
 
       
       try {
-        // let token2 = "TWFnYWx1Okd2OUByTCF4RnoyI0twOHFOdCQxVXc2ZQ=="
 
         const btn = document.getElementById('btnOptIn');
         btn.disabled = true;
@@ -329,10 +293,7 @@ function validaCPF(cpf){
         const credentials = btoa(`${username}:${password}`);
 
         let token = data()
-        //const r = await fetch('https://devwebhook.keepins.app/webhook/formulario/wiz', {method:'POST',  headers: {"Content-Type": "application/json",    "Authorization": `${token}`}, body: JSON.stringify(payload)});
-        // const r = await fetch('https://hmln8n.keepins.app/webhook/formulario/magalu', {method:'POST',  headers: {"Content-Type": "application/json",    "Authorization": `${token}`}, body: JSON.stringify(payload)});
-        // const r = await fetch('https://hmlwebhook.keepins.app/webhook/formulario/magalu', {method:'POST',  headers: {"Content-Type": "application/json",    "token": `${token}`, "Authorization": `${token2}` }, body: JSON.stringify(payload)});
-         const r = await fetch('(URL_WEBHOOK_ENV)/(URL_SENDDATA_WEBHOOK_ENV)', {method:'POST',  headers: {"Content-Type": "application/json", "Authorization": `Basic ${credentials}`, "token": `${token}`},body: JSON.stringify(payload)});
+         const r = await fetch('(URL_WEBHOOK_ENV)(URL_SENDDATA_WEBHOOK_ENV)', {method:'POST',  headers: {"Content-Type": "application/json", "Authorization": `Basic ${credentials}`, "token": `${token}`},body: JSON.stringify(payload)});
 
 
         if(!r.ok) throw new Error('Falha ao enviar');
