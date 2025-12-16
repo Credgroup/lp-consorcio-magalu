@@ -63,6 +63,7 @@
     .hint2{font-size:12px}
     .error{color:#ffffff;font-size:13px;margin-top:6px}
     .hide{display:none}
+    .col-span-2 {grid-column: 1 / -1}
     .checkbox-orange input[type="checkbox"]:checked {accent-color: orange;}
     footer{color:#000000;font-size:12px;margin:28px 0;text-align:center}
     .stepper{display:flex;gap:8px;align-items:center;font-size:12px;color:#9fb0d9;margin:6px 0 0}

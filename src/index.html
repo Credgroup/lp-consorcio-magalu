@@ -91,7 +91,7 @@
             </div>
             <div class="row">
               <div><label for="rg">RG *</label><input id="rg" name="rg" required maxlength="9"></div>
-              <div><label for="telefone">Telefone *</label><input id="telefone" name="telefone" inputmode="tel" required placeholder="(11) 99999-9999" maxlength="11"></div>
+              <div><label for="telefone">Telefone *</label><input id="telefone" name="telefone" type="text" required placeholder="(11) 99999-9999" maxlength="11"></div>
             </div>
             <div class="row">
             <div><label for="endereco">Endereço *</label><input id="endereco" name="endereco" required></div>
@@ -112,38 +112,15 @@
             </div>
             <div class="row">
               <div><label for="profissao">Profissão *</label><input id="profissao" name="profissao" required></div>
-              <!-- <div><label for="renda">Faixa de renda *</label>
-                <select id="renda" name="renda" required>
-                  <option value="">Selecione…</option>
-                  <option>Até 2 SM</option>
-                  <option>De 2 a 5 SM</option>
-                  <option>De 5 a 10 SM</option>
-                  <option>Acima de 10 SM</option>
-                </select>
-              </div> -->
               <div><label for="renda">Faixa de renda *</label><input id="renda" name="renda" required></div>
             </div>
             <div class="row">
               <div><label for="grupo">Grupo *</label><input id="grupo" name="grupo" required></div>
               <div><label for="cota">Cota *</label><input id="cota" name="cota" required></div>
             </div>
-            <!-- <div class="row">
-              <div><label for="venda">Voce confirma o interece de compra?</label>
-              <select id="venda" name="venda" required>
-                  <option value="">Selecione…</option>
-                  <option value=false>Não</option>
-                  <option value=true>Sim</option>
-                </select></div>
-            </div> -->
-            <!-- <div class="row">
-              <div><label for="pep">Você é PEP? *</label>
-                <select id="pep" name="pep" required>
-                  <option value="">Selecione…</option>
-                  <option value="false">Não</option>
-                  <option value="true">Sim</option>
-                </select>
-              </div>
-            </div> -->
+            <div class="row">
+              <div class="col-span-2"><label for="nomesocial">Nome social (opcional)</label><input id="nomesocial" name="nomesocial"></div>
+            </div>
             <div style="margin:12px 0 4px"><label class="checkbox-orange"> Confirmo que li e aceito as Condições Gerais e autorizo o uso dos meus dados nos termos da LGPD: <input type="checkbox" id="consent" required></label></div>
             <!-- <div class="hint">Condições Gerais do seguro (PDF): <a href="#" target="_blank" rel="noopener">baixar</a></div> -->
             <div id="eligError" class="error hide" role="alert"></div>
@@ -153,10 +130,6 @@
             </div>
           </div>
           <input type="hidden" name="cpf_hidden" id="cpf_hidden">
-          <!-- <input type="hidden" name="optin" id="optin" value="true">
-          <input type="hidden" name="utm_source" id="utm_source">
-          <input type="hidden" name="utm_medium" id="utm_medium">
-          <input type="hidden" name="utm_campaign" id="utm_campaign"> -->
         </form>
 
         <article id="step-ok" class="panel hide" aria-live="polite">
@@ -180,7 +153,7 @@
               <summary>Quais idades são elegíveis?</summary>
               <div class="hint2">De 14 a 69 anos, e a soma (idade + prazo do grupo) não pode exceder 78 anos.</div>
             </details>
-            <div style="margin-top:14px" class="hint2">Se houver dúvidas, entre em contato pelo e-mail: <a  href="mailto:contato@segurosconsorciomagalu.com.br" style="color:#0087ff">contato@segurosconsorciomagalu.com.br.</a></div>
+            <div style="margin-top:14px" class="hint2">Se houver dúvidas, entre em contato pelo e-mail: <a  href="mailto:seguros@segurosconsorciomagalu.com.br" style="color:#0087ff">seguros@segurosconsorciomagalu.com.br.</a></div>
           </div>
         </article>
         <article class="panel2" style="margin-top:18px"><div class="hd">Importante</div>
