@@ -30,7 +30,7 @@
     <!-- Bloco de texto -->
     <div class="hero-text">
       <div class="hint" style="opacity:.9;font-weight:800;text-transform:uppercase;letter-spacing:.3px">Exclusivo para clientes Magalu Consórcio</div>
-      <h1>Proteção imediata do seu saldo devedor</h1>
+      <h1>Proteção que vale a pena</h1>
       <div class="chips" id="chips">
         <span class="chip alt2" id="chipGrupoCota">
           Grupo <strong id="StrongGrupoVar">{{grupo}}</strong> • 
@@ -39,7 +39,7 @@
         <span class="chip alt2">Coberturas: Morte e IPTA</span>
         <span class="chip alt">100% digital</span>
       </div>
-      <p class="lead">Indenização aplicada ao <strong>saldo devedor</strong> do consórcio.</p>
+      <!-- <p class="lead">Indenização aplicada ao <strong>saldo devedor</strong> do consórcio.</p> -->
       <p class="from">No valor de R$<span id="preco"><strong id="StrongPremio_mensalVar">{{premiomensal}}</strong></span>/mês*</p>
     </div>
 
@@ -121,7 +121,7 @@
             <div class="row">
               <div class="col-span-2"><label for="nomesocial">Nome social (opcional)</label><input id="nomesocial" name="nomesocial"></div>
             </div>
-            <div style="margin:12px 0 4px"><label class="checkbox-orange"> Confirmo que li e aceito as Condições Gerais e autorizo o uso dos meus dados nos termos da LGPD: <input type="checkbox" id="consent" required></label></div>
+            <div style="margin:12px 0 4px"><label class="checkbox-orange"> Confirmo que li e aceito as <a href="https://wkfkeepinsmarsh.blob.core.windows.net/cdn/magalu/CG_15414.002696.2011-85_V.1.4.pdf" target="_blank" style="color: #ff8a0f; text-decoration: none;">Condições Gerais</a> e autorizo o uso dos meus dados nos termos da <a href="https://www.mapfre.com.br/politica-privacidade/"  target="_blank" style="color: #ff8a0f; text-decoration: none;">LGPD </a>: <input type="checkbox" id="consent" required></label></div>
             <!-- <div class="hint">Condições Gerais do seguro (PDF): <a href="#" target="_blank" rel="noopener">baixar</a></div> -->
             <div id="eligError" class="error hide" role="alert"></div>
             <div style="display:flex;gap:12px;margin-top:14px;flex-wrap:wrap">
@@ -143,23 +143,25 @@
           <div class="bd">
             <details open>
               <summary>O que é a cobertura sobre o saldo devedor?</summary>
-              <div class="hint2">Em caso de sinistro coberto, a indenização é aplicada sobre o saldo devedor do consórcio, conforme condições da apólice.</div>
+              <div class="hint2">Em caso de sinistro coberto pela apólice, a indenização é utilizada para quitar total ou parcialmente o saldo devedor do consórcio, conforme as regras do contrato.</div>
             </details>
             <details>
               <summary>Posso contratar online?</summary>
-              <div class="hint2">Sim. A jornada é 100% digital e sujeita à análise e às Condições Gerais.</div>
+              <div class="hint2">Sim. A contratação é 100% digital, sujeita à análise cadastral e às Condições Gerais da apólice.</div>
             </details>
             <details>
-              <summary>Quais idades são elegíveis?</summary>
-              <div class="hint2">De 14 a 69 anos, e a soma (idade + prazo do grupo) não pode exceder 78 anos.</div>
+              <summary>Quem pode contratar (idade elegível)?</summary>
+              <div class="hint2">Pessoas com idade entre 14 e 69 anos.</div>
+            </details>
+            <details>
+              <summary>Importante</summary>
+              <div class="hint2">a soma da idade do segurado + o prazo do grupo não pode ultrapassar 78 anos. <br>
+              •	Idade elegível: 14 a 69 anos<br>
+              •	Valor do seguro: estimado, sujeito à análise<br>
+              •	Contratação conforme as Condições Gerais da MAPFRE        
+              </div>
             </details>
             <div style="margin-top:14px" class="hint2">Se houver dúvidas, entre em contato pelo e-mail: <a  href="mailto:seguros@segurosconsorciomagalu.com.br" style="color:#0087ff">seguros@segurosconsorciomagalu.com.br.</a></div>
-          </div>
-        </article>
-        <article class="panel2" style="margin-top:18px"><div class="hd">Importante</div>
-          <div class="bd">
-            <div class="hint2" style="color:#000000">                    Idade elegível: de 14 a 69 anos.
-                    *Valor estimado, sujeito à análise e às Condições Gerais da MAPFRE.</div>
           </div>
         </article>
       </aside>
