@@ -14,9 +14,8 @@
 <body style="display: none;" id="corpo">
   <header>
     <div class="wrap">
-      <img src="https://wkfkeepinsmarsh.blob.core.windows.net/arquivamento/html/img/documentos/1027/604/6049consorcio-removebg-preview.png?sp=r&st=2025-05-21T01:16:44Z&se=2026-05-21T09:16:44Z&spr=https&sv=2024-11-04&sr=c&sig=0o75S62Z761Xs2J5GX5XaVRwz%2BlqaGD3trx2uaKZzYw%3D
- " height="40" alt="Magalu Consórcio">
-      <img src="https://wkfkeepinsmarsh.blob.core.windows.net/arquivamento/html/img/documentos/1027/604/6043Mapfre_logo.svg.png?sp=r&st=2025-05-21T01:16:44Z&se=2026-05-21T09:16:44Z&spr=https&sv=2024-11-04&sr=c&sig=0o75S62Z761Xs2J5GX5XaVRwz%2BlqaGD3trx2uaKZzYw%3D" height="40" alt="MAPFRE">
+      <img src="https://wkfkeepinsmarsh.blob.core.windows.net/cdn/magalu/consorcio_magalu.jpg" height="40" alt="Magalu Consórcio">
+      <img src="https://wkfkeepinsmarsh.blob.core.windows.net/cdn/magalu/mapfre.jpg" height="40" alt="MAPFRE">
     </div>
   </header>
 
@@ -29,9 +28,9 @@
     
     <!-- Bloco de texto -->
     <div class="hero-text">
-      <div class="hint" style="opacity:.9;font-weight:800;text-transform:uppercase;letter-spacing:.3px">Exclusivo para clientes Magalu Consórcio</div>
-      <h1>Proteção que vale a pena</h1>
-      <div class="chips" id="chips">
+      <div class="hint" style="opacity:.9;font-weight:800;text-transform:uppercase;letter-spacing:.3px; padding-bottom: 12px;">Exclusivo para clientes Magalu Consórcio</div>
+      <h1 style="padding-bottom: 20px;">Proteção que vale a pena</h1>
+      <div class="chips" id="chips" style="padding-bottom: 20px;">
         <span class="chip alt2" id="chipGrupoCota">
           Grupo <strong id="StrongGrupoVar">{{grupo}}</strong> • 
           Cota <strong id="StrongCotaVar">{{cota}}</strong>
@@ -40,12 +39,12 @@
         <span class="chip alt">100% digital</span>
       </div>
       <!-- <p class="lead">Indenização aplicada ao <strong>saldo devedor</strong> do consórcio.</p> -->
-      <p class="from">No valor de R$<span id="preco"><strong id="StrongPremio_mensalVar">{{premiomensal}}</strong></span>/mês*</p>
+      <p class="from" style="font-size: 20px;">No valor de R$<span id="preco"><strong id="StrongPremio_mensalVar">{{premiomensal}}</strong></span>/mês*</p>
     </div>
 
     <!-- Bloco da imagem -->
     <div class="hero-img">
-      <img src="https://wkfkeepinsmarsh.blob.core.windows.net/arquivamento/html/img/documentos/1027/604/6049Protecaofamiliar1.png?sp=r&st=2025-05-21T01:16:44Z&se=2026-05-21T09:16:44Z&spr=https&sv=2024-11-04&sr=c&sig=0o75S62Z761Xs2J5GX5XaVRwz%2BlqaGD3trx2uaKZzYw%3D" alt="Proteção familiar">
+      <img src="https://wkfkeepinsmarsh.blob.core.windows.net/cdn/magalu/protecaofml.jpg" alt="Proteção familiar">
     </div>
 
   </div>
@@ -112,7 +111,7 @@
             </div>
             <div class="row">
               <div><label for="profissao">Profissão *</label><input id="profissao" name="profissao" required></div>
-              <div><label for="renda">Faixa de renda *</label><input id="renda" name="renda" required></div>
+              <div><label for="renda">Faixa de renda *</label><input id="renda" name="renda" type="text" required></div>
             </div>
             <div class="row">
               <div><label for="grupo">Grupo *</label><input id="grupo" name="grupo" required></div>

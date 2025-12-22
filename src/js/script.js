@@ -51,6 +51,59 @@ window.onload = function () {
   window.history.replaceState(null, document.title, cleanUrl);
 }
 
+// const input = document.getElementById('renda');
+
+//   input.addEventListener('input', function () {
+//     let value = this.value;
+
+//     // Remove tudo que não for número
+//     value = value.replace(/\D/g, '');
+
+//     // Se vazio, limpa o campo
+//     if (value === '') {
+//       this.value = '';
+//       return;
+//     }
+
+//     // Converte para número (centavos)
+//     const number = Number(value) / 100;
+
+//     // Formata para Real Brasileiro
+//     this.value = number.toLocaleString('pt-BR', {
+//       style: 'currency',
+//       currency: 'BRL'
+//     });
+//   });
+
+const input = document.getElementById('renda');
+
+
+function formatarRenda(el) {
+  let value = el.value;
+
+  // Remove tudo que não for número
+  value = value.replace(/\D/g, '');
+
+  // Se vazio, limpa o campo
+  if (value === '') {
+    el.value = '';
+    return;
+  }
+
+  // Converte para número (centavos)
+  const number = Number(value) / 100;
+
+  // Formata para Real Brasileiro
+  el.value = number.toLocaleString('pt-BR', {
+    style: 'currency',
+    currency: 'BRL'
+  });
+}
+
+// ao digitar
+input.addEventListener('input', function () {
+  formatarRenda(this);
+});
 
 function pegarDataCerta(elemento) {
   try {
@@ -251,6 +304,10 @@ $('#btnCpf').addEventListener('click', async () => {
   show($('#form-adesao'));
   stepActive(2);
   dataLayer.push({ event: 'cpf_validado' });
+  console.log(input)
+  let novoValor = input
+  novoValor.value = novoValor.value + '00'
+  formatarRenda(input);
 });
 
 $('#btnLimpar').addEventListener('click', () => { $('#cpf').value = ''; $('#cpf').focus(); });
@@ -281,6 +338,9 @@ $('#form-adesao').addEventListener('submit', async (e) => {
     const DeviceData = getDeviceData();
     console.log(DeviceData);
 
+  let rendaFinal = $('#renda').value
+  rendaFinal = rendaFinal.replace("R$", "").trim()
+
   let dataDeEnvio = getFormattedDate()
   const valorDoTelefone = document.getElementById("telefone").value
   const ddd = valorDoTelefone.slice(0, 2)
@@ -306,7 +366,7 @@ $('#form-adesao').addEventListener('submit', async (e) => {
       magalu_resposta_uf: $('#uf').value,
       magalu_resposta_cep: $('#cep').value,
       magalu_resposta_profissao: $('#profissao').value,
-      magalu_resposta_renda: $('#renda').value,
+      magalu_resposta_renda: rendaFinal,
       magalu_resposta_grupo: $('#grupo').value,
       magalu_resposta_cota: $('#cota').value,
       magalu_resposta_optin: true,
