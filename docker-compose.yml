@@ -8,8 +8,8 @@ services:
     image: "landingpage:${IMAGE_VERSION:-latest}"
     environment:
       ENVIRONMENT_VARIABLE: ${ENVIRONMENT_VARIABLE:-development}
-      URL_SENDDATA_WEBHOOK_ENV: ${URL_SENDDATA_WEBHOOK_ENV:-https://hmln8n.keepins.app}
-      URL_WEBHOOK_ENV: ${URL_WEBHOOK_ENV:-webhook/formulario/magalu}
+      URL_SENDDATA_WEBHOOK_ENV: ${URL_SENDDATA_WEBHOOK_ENV:-webhook/formulario/magalu}
+      URL_WEBHOOK_ENV: ${URL_WEBHOOK_ENV:-https://hmln8n.keepins.app}
       IMAGE_VERSION: ${IMAGE_VERSION:-1.0.0}
     ports:
       - "8040:80"
