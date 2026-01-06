@@ -14,9 +14,8 @@
 <body style="display: none;" id="corpo">
   <header>
     <div class="wrap">
-      <img src="https://wkfkeepinsmarsh.blob.core.windows.net/arquivamento/html/img/documentos/1027/604/6049consorcio-removebg-preview.png?sp=r&st=2025-05-21T01:16:44Z&se=2026-05-21T09:16:44Z&spr=https&sv=2024-11-04&sr=c&sig=0o75S62Z761Xs2J5GX5XaVRwz%2BlqaGD3trx2uaKZzYw%3D
- " height="40" alt="Magalu Consórcio">
-      <img src="https://wkfkeepinsmarsh.blob.core.windows.net/arquivamento/html/img/documentos/1027/604/6043Mapfre_logo.svg.png?sp=r&st=2025-05-21T01:16:44Z&se=2026-05-21T09:16:44Z&spr=https&sv=2024-11-04&sr=c&sig=0o75S62Z761Xs2J5GX5XaVRwz%2BlqaGD3trx2uaKZzYw%3D" height="40" alt="MAPFRE">
+      <img src="https://wkfkeepinsmarsh.blob.core.windows.net/cdn/magalu/consorcio_magalu.jpg" height="40" alt="Magalu Consórcio">
+      <img src="https://wkfkeepinsmarsh.blob.core.windows.net/cdn/magalu/mapfre.jpg" height="40" alt="MAPFRE">
     </div>
   </header>
 
@@ -29,9 +28,9 @@
     
     <!-- Bloco de texto -->
     <div class="hero-text">
-      <div class="hint" style="opacity:.9;font-weight:800;text-transform:uppercase;letter-spacing:.3px">Exclusivo para clientes Magalu Consórcio</div>
-      <h1>Proteção imediata do seu saldo devedor</h1>
-      <div class="chips" id="chips">
+      <div class="hint" style="opacity:.9;font-weight:800;text-transform:uppercase;letter-spacing:.3px; padding-bottom: 12px;">Exclusivo para clientes Magalu Consórcio</div>
+      <h1 style="padding-bottom: 20px;">Proteção que vale a pena</h1>
+      <div class="chips" id="chips" style="padding-bottom: 20px;">
         <span class="chip alt2" id="chipGrupoCota">
           Grupo <strong id="StrongGrupoVar">{{grupo}}</strong> • 
           Cota <strong id="StrongCotaVar">{{cota}}</strong>
@@ -39,13 +38,13 @@
         <span class="chip alt2">Coberturas: Morte e IPTA</span>
         <span class="chip alt">100% digital</span>
       </div>
-      <p class="lead">Indenização aplicada ao <strong>saldo devedor</strong> do consórcio.</p>
-      <p class="from">No valor de R$<span id="preco"><strong id="StrongPremio_mensalVar">{{premiomensal}}</strong></span>/mês*</p>
+      <!-- <p class="lead">Indenização aplicada ao <strong>saldo devedor</strong> do consórcio.</p> -->
+      <p class="from" style="font-size: 20px;">No valor de R$<span id="preco"><strong id="StrongPremio_mensalVar">{{premiomensal}}</strong></span>/mês*</p>
     </div>
 
     <!-- Bloco da imagem -->
     <div class="hero-img">
-      <img src="https://wkfkeepinsmarsh.blob.core.windows.net/arquivamento/html/img/documentos/1027/604/6049Protecaofamiliar1.png?sp=r&st=2025-05-21T01:16:44Z&se=2026-05-21T09:16:44Z&spr=https&sv=2024-11-04&sr=c&sig=0o75S62Z761Xs2J5GX5XaVRwz%2BlqaGD3trx2uaKZzYw%3D" alt="Proteção familiar">
+      <img src="https://wkfkeepinsmarsh.blob.core.windows.net/cdn/magalu/protecaofml.jpg" alt="Proteção familiar">
     </div>
 
   </div>
@@ -91,7 +90,7 @@
             </div>
             <div class="row">
               <div><label for="rg">RG *</label><input id="rg" name="rg" required maxlength="9"></div>
-              <div><label for="telefone">Telefone *</label><input id="telefone" name="telefone" inputmode="tel" required placeholder="(11) 99999-9999" maxlength="11"></div>
+              <div><label for="telefone">Telefone *</label><input id="telefone" name="telefone" type="text" required placeholder="(11) 99999-9999" maxlength="11"></div>
             </div>
             <div class="row">
             <div><label for="endereco">Endereço *</label><input id="endereco" name="endereco" required></div>
@@ -112,39 +111,16 @@
             </div>
             <div class="row">
               <div><label for="profissao">Profissão *</label><input id="profissao" name="profissao" required></div>
-              <!-- <div><label for="renda">Faixa de renda *</label>
-                <select id="renda" name="renda" required>
-                  <option value="">Selecione…</option>
-                  <option>Até 2 SM</option>
-                  <option>De 2 a 5 SM</option>
-                  <option>De 5 a 10 SM</option>
-                  <option>Acima de 10 SM</option>
-                </select>
-              </div> -->
-              <div><label for="renda">Faixa de renda *</label><input id="renda" name="renda" required></div>
+              <div><label for="renda">Faixa de renda *</label><input id="renda" name="renda" type="text" required></div>
             </div>
             <div class="row">
               <div><label for="grupo">Grupo *</label><input id="grupo" name="grupo" required></div>
               <div><label for="cota">Cota *</label><input id="cota" name="cota" required></div>
             </div>
-            <!-- <div class="row">
-              <div><label for="venda">Voce confirma o interece de compra?</label>
-              <select id="venda" name="venda" required>
-                  <option value="">Selecione…</option>
-                  <option value=false>Não</option>
-                  <option value=true>Sim</option>
-                </select></div>
-            </div> -->
-            <!-- <div class="row">
-              <div><label for="pep">Você é PEP? *</label>
-                <select id="pep" name="pep" required>
-                  <option value="">Selecione…</option>
-                  <option value="false">Não</option>
-                  <option value="true">Sim</option>
-                </select>
-              </div>
-            </div> -->
-            <div style="margin:12px 0 4px"><label class="checkbox-orange"> Confirmo que li e aceito as Condições Gerais e autorizo o uso dos meus dados nos termos da LGPD: <input type="checkbox" id="consent" required></label></div>
+            <div class="row">
+              <div class="col-span-2"><label for="nomesocial">Nome social (opcional)</label><input id="nomesocial" name="nomesocial"></div>
+            </div>
+            <div style="margin:12px 0 4px"><label class="checkbox-orange"> Confirmo que li e aceito as <a href="https://wkfkeepinsmarsh.blob.core.windows.net/cdn/magalu/CG_15414.002696.2011-85_V.1.4.pdf" target="_blank" style="color: #ff8a0f; text-decoration: none;">Condições Gerais</a> e autorizo o uso dos meus dados nos termos da <a href="https://www.mapfre.com.br/politica-privacidade/"  target="_blank" style="color: #ff8a0f; text-decoration: none;">LGPD </a>: <input type="checkbox" id="consent" required></label></div>
             <!-- <div class="hint">Condições Gerais do seguro (PDF): <a href="#" target="_blank" rel="noopener">baixar</a></div> -->
             <div id="eligError" class="error hide" role="alert"></div>
             <div style="display:flex;gap:12px;margin-top:14px;flex-wrap:wrap">
@@ -153,10 +129,6 @@
             </div>
           </div>
           <input type="hidden" name="cpf_hidden" id="cpf_hidden">
-          <!-- <input type="hidden" name="optin" id="optin" value="true">
-          <input type="hidden" name="utm_source" id="utm_source">
-          <input type="hidden" name="utm_medium" id="utm_medium">
-          <input type="hidden" name="utm_campaign" id="utm_campaign"> -->
         </form>
 
         <article id="step-ok" class="panel hide" aria-live="polite">
@@ -170,23 +142,25 @@
           <div class="bd">
             <details open>
               <summary>O que é a cobertura sobre o saldo devedor?</summary>
-              <div class="hint2">Em caso de sinistro coberto, a indenização é aplicada sobre o saldo devedor do consórcio, conforme condições da apólice.</div>
+              <div class="hint2">Em caso de sinistro coberto pela apólice, a indenização é utilizada para quitar total ou parcialmente o saldo devedor do consórcio, conforme as regras do contrato.</div>
             </details>
             <details>
               <summary>Posso contratar online?</summary>
-              <div class="hint2">Sim. A jornada é 100% digital e sujeita à análise e às Condições Gerais.</div>
+              <div class="hint2">Sim. A contratação é 100% digital, sujeita à análise cadastral e às Condições Gerais da apólice.</div>
             </details>
             <details>
-              <summary>Quais idades são elegíveis?</summary>
-              <div class="hint2">De 14 a 69 anos, e a soma (idade + prazo do grupo) não pode exceder 78 anos.</div>
+              <summary>Quem pode contratar (idade elegível)?</summary>
+              <div class="hint2">Pessoas com idade entre 14 e 69 anos.</div>
             </details>
-            <div style="margin-top:14px" class="hint2">Se houver dúvidas, entre em contato pelo e-mail: <a  href="mailto:contato@segurosconsorciomagalu.com.br" style="color:#0087ff">contato@segurosconsorciomagalu.com.br.</a></div>
-          </div>
-        </article>
-        <article class="panel2" style="margin-top:18px"><div class="hd">Importante</div>
-          <div class="bd">
-            <div class="hint2" style="color:#000000">                    Idade elegível: de 14 a 69 anos.
-                    *Valor estimado, sujeito à análise e às Condições Gerais da MAPFRE.</div>
+            <details>
+              <summary>Importante</summary>
+              <div class="hint2">a soma da idade do segurado + o prazo do grupo não pode ultrapassar 78 anos. <br>
+              •	Idade elegível: 14 a 69 anos<br>
+              •	Valor do seguro: estimado, sujeito à análise<br>
+              •	Contratação conforme as Condições Gerais da MAPFRE        
+              </div>
+            </details>
+            <div style="margin-top:14px" class="hint2">Se houver dúvidas, entre em contato pelo e-mail: <a  href="mailto:seguros@segurosconsorciomagalu.com.br" style="color:#0087ff">seguros@segurosconsorciomagalu.com.br.</a></div>
           </div>
         </article>
       </aside>
