@@ -410,7 +410,7 @@ $('#form-adesao').addEventListener('submit', async (e) => {
 
 
   hide($('#form-adesao'));
-  $('#okMsg').textContent = 'Obrigado! Enviamos a confirmação e próximas etapas para seu e‑mail.';
+  $('#okMsg').textContent = 'Obrigado! Enviaremos a confirmação e próximas etapas para seu e‑mail.';
   show($('#step-ok'));
   stepActive(3);
   dataLayer.push({ event: 'optin_enviado' });
