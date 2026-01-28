@@ -14,6 +14,7 @@ window.onload = function () {
   const taxa = validarParametro(params.get("taxa"))
   const valorcredito = validarParametro(params.get("valorcredito"))
   const faixarenda = validarParametro(params.get("faixarenda"))
+  console.log(faixarenda)
   pegarValorRenda(faixarenda)
 
 
@@ -124,9 +125,14 @@ function pegarDataCerta(elemento) {
 }
 
 function pegarValorRenda(elemento) {
-  document.getElementById("renda").value = elemento
-}
+  let valor = elemento.toString();
 
+  if (valor.includes(',') || valor.includes('.')) {
+    valor = valor.split(/[.,]/)[0];
+  }
+
+  document.getElementById("renda").value = valor;
+}
 function getDeviceData() {
   const nav = navigator;
 
